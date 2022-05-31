@@ -1,0 +1,134 @@
+local Venyx = loadstring(game:HttpGet("https://raw.githubusercontent.com/Stefanuk12/Venyx-UI-Library/main/source2.lua"))()
+
+local UI = Venyx.new({
+    title = "Script Creator"
+})
+
+local Test = UI:addPage({
+    title = "Script Maker",
+    icon = 5012544693
+})
+
+local Assist = UI:addPage({
+    title = "Script Assister",
+    icon = 5012544693
+})
+
+local SectionA = Test:addSection({
+    title = "Teleport Creator"
+})
+
+local SectionB = Test:addSection({
+    title = "Utility"
+})
+
+local SectionC = Test:addSection({
+    title = "Useful Links"
+})
+
+local SectionD = Assist:addSection({
+    title = "Game Scripts"
+})
+
+SectionA:addButton({
+    title = "Normal TP",
+    callback = function()
+        local o = tostring(game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.Position)
+        setclipboard("game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new("..o..")")  
+    end
+})
+
+SectionA:addTextbox({
+    title = "Tween TP | Set Speed -->",
+    default = "3",
+    callback = function(value, focusLost)
+        if (focusLost) then
+        local Timer = {
+	    timetotween = value
+        }
+
+            pcall(function()
+	            local o = tostring(game.Players.LocalPlayer.Character.HumanoidRootPart.Position)
+	            setclipboard('tweenService, tweenInfo = game:GetService("TweenService"), TweenInfo.new('..Timer.timetotween..', Enum.EasingStyle.Sine)\ntweenService:Create(game:GetService("Players")["LocalPlayer"].Character.HumanoidRootPart, tweenInfo, {CFrame = CFrame.new('..o..')}):Play()')  
+            end)
+        end
+    end
+})
+
+SectionB:addButton({
+    title = "Copy Position",
+    callback = function()
+        local s = tostring(game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.Position)
+
+        setclipboard(tostring(game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.Position)) 
+    end
+})
+
+SectionB:addTextbox({
+    title = "Pastebin to Loadstring",
+    default = "Insert Here",
+    callback = function(value, focusLost)
+        print("Input", value)
+
+        if (focusLost) then
+            setclipboard("loadstring(game:HttpGet(\"" .. tostring(value) .. "\"))()")  
+        end
+    end
+})
+
+SectionC:addButton({
+    title = "Github",
+    callback = function()
+        setclipboard("https://github.com/DarkWADMe/script")
+    end
+})
+
+SectionC:addButton({
+    title = "Pastebin",
+    callback = function()
+        setclipboard("https://pastebin.com/")
+    end
+})
+
+SectionC:addButton({
+    title = "Area-27",
+    callback = function()
+        setclipboard("https://www.roblox.com/games/2565450271/SCP-Area-27")
+    end
+})
+
+SectionD:addButton({
+    title = "Fast Run [3]",
+    callback = function()
+        loadstring(game:HttpGet(('https://pastebin.com/raw/VBEaqaZn'),true))()
+    end
+})
+
+SectionD:addButton({
+    title = "No-Clip Fly",
+    callback = function()
+        loadstring(game:HttpGet("https://pastebin.com/raw/pTPcGJ4G"))()
+    end
+})
+
+SectionD:addButton({
+    title = "ESP",
+    callback = function()
+        loadstring(game:HttpGet("https://pastebin.com/raw/iDe6xbt4", true))()
+    end
+})
+
+SectionD:addButton({
+    title = "Remote Spy",
+    callback = function()
+        loadstring(game:HttpGet("https://pastebin.com/raw/iJ9tKzTX"))()
+        loadstring(game:HttpGet("https://pastebin.com/raw/BDhSQqUU", true))()
+    end
+})
+
+SectionD:addButton({
+    title = "Dark Dex",
+    callback = function()
+        loadstring(game:HttpGet(('https://pastebin.com/raw/T8GCuJgv'),true))()
+    end
+})
