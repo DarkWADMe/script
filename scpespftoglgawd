@@ -1,0 +1,34 @@
+for i, v in pairs(game.Workspace:GetDescendants()) do
+    if v.Name == "ESP" and v.ClassName == "Highlight" then
+        if v.Enabled == true then
+            v.Enabled = false
+        else
+            v.Enabled = true
+        end
+    end
+end
+wait(0.1)
+pcall(function()
+    for i, v in pairs(game:GetService("Workspace")["SCP-457"].SCP:GetDescendants()) do
+        if v:IsA("Part") or v:IsA("MeshPart") then
+            if v.Transparency >= 0.6 then
+                v.Transparency = 0
+            elseif v.Transparency == 0 then
+                v.Transparency = 0.6
+            end
+        end
+    end
+end)
+
+pcall(function()
+    for i, v in pairs(game:GetService("Workspace")["SCP-017"]:GetDescendants()) do
+        if v:IsA("Part") or v:IsA("MeshPart") then
+            if v.Transparency >= 0.6 then
+                v.Transparency = 0
+            elseif v.Transparency == 0 then
+                v.Transparency = 0.6
+            end
+        end
+    end
+end)
+-- SCP ESP Toggle
