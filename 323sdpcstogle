@@ -1,0 +1,11 @@
+for i, v in pairs(game.Workspace:GetDescendants()) do
+    if v.Name == "InnerWaves" then
+        if v.Enabled == true then
+            v.Enabled = false
+        else
+            v.Enabled = true
+        end
+    end
+end
+
+-- 323 Toggle
