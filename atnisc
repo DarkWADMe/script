@@ -1,8 +1,10 @@
-for i, v in pairs(game:GetService("Workspace").SolitaryTriggers:GetChildren()) do
-    if v:IsA("Part") then
-        v:Destroy()
+pcall(function()
+    for i, v in pairs(game:GetService("Workspace").SolitaryTriggers:GetChildren()) do
+        if v:IsA("Part") then
+            v:Destroy()
+        end
     end
-end
+end)
 
 if game.Players.LocalPlayer.PlayerGui:FindFirstChild("Solitary") then
     game.Players.LocalPlayer.PlayerGui.Solitary:Destroy()
